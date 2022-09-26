@@ -2,8 +2,8 @@
 
 int main(int argc, char* argv[])
 {
-	int N = 0;
-	int K = 0;
+	int n = 0;
+	int k = 0;
 
 	std::cin >> N >> K;
 
