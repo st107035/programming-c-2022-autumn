@@ -7,135 +7,141 @@ int main(int argc, char* argv[])
 
 	std::cin >> number;
 
-	switch (number / 100)
+	if (number == 0)
 	{
-	case 1:
-		std::cout << "сто ";
-		break;
-	case 2:
-		std::cout << "двести ";
-		break;
-	case 3:
-		std::cout << "триста ";
-		break;
-	case 4:
-		std::cout << "четыреста ";
-		break;
-	case 5:
-		std::cout << "пятьсот ";
-		break;
-	case 6:
-		std::cout << "шестьсот ";
-		break;
-	case 7:
-		std::cout << "семьсот ";
-		break;
-	case 8:
-		std::cout << "восемьсот ";
-		break;
-	case 9:
-		std::cout << "девятьсот ";
-		break;
-	}
-	if ((number % 100) / 10 != 1)
-	{
-		switch ((number % 100) / 10)
-		{
-		case 2:
-			std::cout << "двадцать ";
-			break;
-		case 3:
-			std::cout << "тридцать ";
-			break;
-		case 4:
-			std::cout << "сорок ";
-			break;
-		case 5:
-			std::cout << "пятьдесят ";
-			break;
-		case 6:
-			std::cout << "шестьдесят ";
-			break;
-		case 7:
-			std::cout << "семьдесят ";
-			break;
-		case 8:
-			std::cout << "восемьдесят ";
-			break;
-		case 9:
-			std::cout << "девяносто ";
-			break;
-		}
-		switch (number % 10)
-		{
-		case 1:
-			std::cout << "один банан.";
-			break;
-		case 2:
-			std::cout << "два банана.";
-			break;
-		case 3:
-			std::cout << "три банана.";
-			break;
-		case 4:
-			std::cout << "четыре банана.";
-			break;
-		case 5:
-			std::cout << "пять бананов.";
-			break;
-		case 6:
-			std::cout << "шесть бананов.";
-			break;
-		case 7:
-			std::cout << "семь бананов.";
-			break;
-		case 8:
-			std::cout << "восемь бананов.";
-			break;
-		case 9:
-			std::cout << "девять бананов.";
-			break;
-		case 0:
-			std::cout << "бананов.";
-			break;
-		}
+		std::cout << "nol' bananov.";
 	}
 	else
 	{
-		switch (number % 10)
+		switch (number / 100)
 		{
-		case 0:
-			std::cout << "десять бананов.";
-			break;
 		case 1:
-			std::cout << "одиннадцать бананов.";
+			std::cout << "sto ";
 			break;
 		case 2:
-			std::cout << "двенадцать бананов.";
+			std::cout << "dvesti ";
 			break;
 		case 3:
-			std::cout << "тринадцать бананов";
+			std::cout << "trista ";
 			break;
 		case 4:
-			std::cout << "четырнадцать бананов.";
+			std::cout << "chetiresta ";
 			break;
 		case 5:
-			std::cout << "пятнадцать бананов.";
+			std::cout << "pyat'sot ";
 			break;
 		case 6:
-			std::cout << "шестнадцать бананов";
+			std::cout << "schest'sot ";
 			break;
 		case 7:
-			std::cout << "семнадцать бананов.";
+			std::cout << "sem'sot ";
 			break;
 		case 8:
-			std::cout << "восемнадцать бананов.";
+			std::cout << "vosem'sot ";
 			break;
 		case 9:
-			std::cout << "девятнадцать бананов.";
+			std::cout << "devyat'sot ";
 			break;
 		}
+		if ((number % 100) / 10 != 1)
+		{
+			switch ((number % 100) / 10)
+			{
+			case 2:
+				std::cout << "dvadtsat' ";
+				break;
+			case 3:
+				std::cout << "tridtsat' ";
+				break;
+			case 4:
+				std::cout << "sorok ";
+				break;
+			case 5:
+				std::cout << "pyat'desyat ";
+				break;
+			case 6:
+				std::cout << "schest'desyat ";
+				break;
+			case 7:
+				std::cout << "sem'desyat ";
+				break;
+			case 8:
+				std::cout << "vosem'desyat ";
+				break;
+			case 9:
+				std::cout << "devyanosto ";
+				break;
+			}
+			switch (number % 10)
+			{
+			case 1:
+				std::cout << "odin banan.";
+				break;
+			case 2:
+				std::cout << "dva banana.";
+				break;
+			case 3:
+				std::cout << "tri banana.";
+				break;
+			case 4:
+				std::cout << "chetire banana.";
+				break;
+			case 5:
+				std::cout << "pyat' bananov.";
+				break;
+			case 6:
+				std::cout << "schest' bananov.";
+				break;
+			case 7:
+				std::cout << "sem' bananov.";
+				break;
+			case 8:
+				std::cout << "vosem' bananov.";
+				break;
+			case 9:
+				std::cout << "devyat' bananov.";
+				break;
+			case 0:
+				std::cout << "bananov.";
+				break;
+			}
+		}
+		else
+		{
+			switch (number % 10)
+			{
+			case 0:
+				std::cout << "desyat' bananov.";
+				break;
+			case 1:
+				std::cout << "odinnadtsat' bananov.";
+				break;
+			case 2:
+				std::cout << "dvenadtsat' bananov.";
+				break;
+			case 3:
+				std::cout << "trinadtsat' bananov.";
+				break;
+			case 4:
+				std::cout << "chetirnadtsat' bananov.";
+				break;
+			case 5:
+				std::cout << "pyatnadtsat' bananov.";
+				break;
+			case 6:
+				std::cout << "schestnadtsat' bananov.";
+				break;
+			case 7:
+				std::cout << "semnadtsat' bananov.";
+				break;
+			case 8:
+				std::cout << "vosemnadtsat' bananov.";
+				break;
+			case 9:
+				std::cout << "devyatnadtsat' bananov.";
+				break;
+			}
+		}
 	}
-
 	return EXIT_SUCCESS;
 }
