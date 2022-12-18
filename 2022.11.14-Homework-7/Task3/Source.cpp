@@ -13,13 +13,6 @@ int main(int argc, char* argv[])
 		a[i] = new int[n];
 	}
 
-	int** b = new int* [n];
-
-	for (int i = 0; i < n; ++i)
-	{
-		b[i] = new int[n];
-	}
-
 	for (int i = 0; i < n; ++i)
 	{
 		for (int j = 0; j < n; ++j)
@@ -30,15 +23,13 @@ int main(int argc, char* argv[])
 
 	for (int i = 0; i < n; ++i)
 	{
-		for (int j = 0; j < n; ++j)
+		for (int j = 0; j < n - i; ++j)
 		{
-			if (j + i == n - 1)
+			if ( j + i != n - 1)
 			{
-				b[i][j] = a[i][j];
-			}
-			else
-			{
-				b[i][j] =  a[n - j - 1][n - i - 1];
+				int c = a[i][j];
+				a[i][j] = a[n - j - 1][n - i - 1];
+				a[n - j - 1][n - i - 1] = c;
 			}
 		}
 		std::cout << std::endl;
@@ -48,7 +39,7 @@ int main(int argc, char* argv[])
 	{
 		for (int j = 0; j < n; ++j)
 		{
-			std::cout << b[i][j] << ' ';
+			std::cout << a[i][j] << ' ';
 		}
 		std::cout << std::endl;
 	}
@@ -59,13 +50,6 @@ int main(int argc, char* argv[])
 	}
 
 	delete[] a;
-
-	for (int i = 0; i < n; ++i)
-	{
-		delete[] b[i];
-	}
-
-	delete[] b;
 
 	return EXIT_SUCCESS;
 }
