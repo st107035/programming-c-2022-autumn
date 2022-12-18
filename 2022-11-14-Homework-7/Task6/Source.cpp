@@ -8,11 +8,14 @@ int main(int argc, char* argv[])
 	std::cin >> n >> m;
 
 	int** a = new int* [n];
-	int** b = new int* [n];
+
 	for (int i = 0; i < n; ++i)
 	{
 		a[i] = new int[m];
 	}
+
+	int** b = new int* [n];
+
 	for (int i = 0; i < n; ++i)
 	{
 		b[i] = new int[m];
@@ -47,6 +50,7 @@ int main(int argc, char* argv[])
 		delete[] a[i];
 	}
 	delete[] a;
+
 	for (int i = 0; i < n; ++i)
 	{
 		delete[] b[i];
