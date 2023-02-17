@@ -47,27 +47,6 @@ int main(int argc, char* argv[])
 	int c = 0;
 	std::cin >> a >> b >> c;
 
-	//int*** cache = new int** [a];
-	//for (int i = 0; i < 20; ++i)
-	//{
-	//	cache[i] = new int* [20];
-	//	for (int j = 0; j < 20; ++j)
-	//	{
-	//		cache[i][j] = new int[20];
-	//	}
-	//}
-
-	//for (int i = 0; i < 20; ++i)
-	//{
-	//	for (int j = 0; j < 20; ++j)
-	//	{
-	//		for (int k = 0; k < 20; ++k)
-	//		{
-	//			cache[i][j][k] = 0;
-	//		}
-	//	}
-	//}
-
 	int cache[21][21][21]{ 0 };
 
 	std::cout << f(a, b, c, cache);
