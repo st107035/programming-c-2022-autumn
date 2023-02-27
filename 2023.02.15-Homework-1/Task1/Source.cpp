@@ -18,34 +18,35 @@ struct Animal
 		this->name = name;
 		this->age = age;
 	}
-	Animal(const Animal& Creature)
+	Animal(const Animal& creature)
 	{
-		this->type = Creature.type;
-		this->name = Creature.name;
-		this->age = Creature.age;
+		this->type = creature.type;
+		this->name = creature.name;
+		this->age = creature.age;
 	}
 	~Animal()
 	{
 
 	}
-	void elderAnimal()
-	{
-		age += 1;
-	}
 };
 
-void printAnimal(struct Animal Creature)
+void printAnimal(struct Animal creature)
 {
-	std::cout << Creature.type << " " << Creature.name << " " << Creature.age << std::endl;
+	std::cout << creature.type << " " << creature.name << " " << creature.age << std::endl;
+}
+
+void elderAnimal(struct Animal& creature)
+{
+	creature.age += 1;
 }
 
 int main(int argc, char* argv[])
 {
-	Animal Default;
-	printAnimal(Default);
-	Animal Birdie("parrot", "Kesha", 3);
-	Birdie.elderAnimal();
-	printAnimal(Birdie);
+	Animal def;
+	printAnimal(def);
+	Animal birdie("parrot", "Kesha", 3);
+	elderAnimal(birdie);
+	printAnimal(birdie);
 
 	return EXIT_SUCCESS;
 }
