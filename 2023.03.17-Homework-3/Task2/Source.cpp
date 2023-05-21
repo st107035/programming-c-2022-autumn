@@ -14,9 +14,9 @@ public:
 		surname(surname), name(name), mathm(mathm), physicsm(physicsm), csm(csm) {};
 	Student(const Student& pupil) : surname(pupil.surname), name(pupil.name), mathm(pupil.mathm), physicsm(pupil.physicsm), csm(pupil.csm) {};
 
-	float avm()
+	double avm()
 	{
-		return (mathm + physicsm + csm) / 3;
+		return (mathm + physicsm + csm) / (3.0);
 	}
 
 	void print()
@@ -26,8 +26,6 @@ public:
 
 	~Student() {};
 };
-
-//Сортировка слиянием
 
 void merge(Student* a, int start, int mid, int end)
 {
@@ -40,7 +38,7 @@ void merge(Student* a, int start, int mid, int end)
 	{
 		if (a[i].avm() <= a[j].avm())
 		{
-			b[k++] = a[k++];
+			b[k++] = a[i++];
 		}
 		else
 		{
@@ -51,6 +49,11 @@ void merge(Student* a, int start, int mid, int end)
 	while (i <= mid)
 	{
 		b[k++] = a[i++];
+	}
+
+	while (j <= end)
+	{
+		b[k++] = a[j++];
 	}
 
 	for (int i = start; i <= end; i++)
@@ -65,15 +68,15 @@ void mergeSort(Student* a, int start, int end)
 	{
 		return;
 	}
-	int mid;
 	if (start < end)
 	{
-		mid = (start + end) / 2;
+		int mid = (start + end) / 2;
 		mergeSort(a, start, mid);
 		mergeSort(a, mid + 1, end);
 		merge(a, start, mid, end);
 	}
-}
+} 
+
 
 int main(int argc, char* argv[])
 {
@@ -83,6 +86,7 @@ int main(int argc, char* argv[])
 	int mathm = 0;
 	int physicsm = 0;
 	int csm = 0;
+
 	std::cin >> n;
 
 	Student* a = new Student[n];

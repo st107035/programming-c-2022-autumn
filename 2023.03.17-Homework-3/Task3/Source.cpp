@@ -21,9 +21,9 @@ public:
 
 struct Rectangle : public Shape
 {
-	Rectangle(int a = 0, int b = 0) : Shape(a, b) {};
+	Rectangle(int a = 0, int b = 0) : Shape(a, b, a, b) {};
 
-	float area()
+	double area()
 	{
 		return a * b;
 	}
@@ -33,7 +33,12 @@ struct Rectangle : public Shape
 
 struct Square : public Rectangle
 {
-	Square(int a = 0) : Rectangle(a, a) { };
+	Square(int a = 0) : Rectangle(a, a) {};
+
+	double area()
+	{
+		return a * a;
+	}
 
 	~Square() {};
 };
@@ -42,9 +47,9 @@ struct Triangle : public Shape
 {
 	Triangle(int a = 0, int b = 0, int c = 0) : Shape(a, b, c) {};
 
-	float area()
+	double area()
 	{
-		float p = 0.5 * (a + b + c);
+		double p = 0.5 * (a + b + c);
 		return sqrt(p * (p - a) * (p - b) * (p - c));
 	}
 
@@ -55,7 +60,7 @@ struct Circle : public Shape
 {
 	Circle(int a = 0) : Shape(a) {};
 
-	float area()
+	double area()
 	{
 		return (3.14) * (a * a);
 	}

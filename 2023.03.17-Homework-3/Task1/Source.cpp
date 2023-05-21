@@ -10,7 +10,7 @@ public:
 	Point(int x, int y) : x(x), y(y) {};
 	Point(const Point& pair) : x(pair.x), y(pair.y) {};
 
-	float distance()
+	double distance()
 	{
 		return sqrt(x*x + y*y);
 	}
@@ -20,10 +20,7 @@ public:
 		std::cout << x << " " << y << std::endl;
 	}
 
-	~Point()
-	{
-
-	}
+	~Point() {};
 };
 
 int main(int argc, char* argv[])
@@ -31,7 +28,9 @@ int main(int argc, char* argv[])
 	int n = 0;
 	int x = 0;
 	int y = 0;
+
 	std::cin >> n;
+
 	Point* a = new Point[n];
 
 	for (int i = 0; i < n; ++i)
@@ -40,10 +39,9 @@ int main(int argc, char* argv[])
 		a[i] = Point(x, y);
 	}
 
-	for (int i = 0; i < n; ++i)
+	for (int i = n - 1; i > 0; --i)
 	{
-
-		for (int j = 0; j < n - 1; ++j)
+		for (int j = 0; j < i; ++j)
 		{
 			if (a[j].distance() > a[j + 1].distance())
 			{
